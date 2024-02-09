@@ -1,6 +1,6 @@
 package com.companyname.demoapp.dto;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private Integer id;
     private String name;
     private Double salary;
@@ -36,5 +36,10 @@ public class Employee {
     }
 
     public Employee() {
+    }
+
+    @Override
+    public int compareTo(Employee employee) {
+        return this.id.compareTo(employee.getId());
     }
 }
